@@ -1,0 +1,2 @@
+C:\Users\Matth\OneDrive\Documents\Git\Unity\EndoRun\EndoRun\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\Matth\OneDrive\Documents\Git\Unity\EndoRun\EndoRun\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
