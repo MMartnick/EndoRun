@@ -46,9 +46,9 @@ public class PlayerController : MonoBehaviour
         {
             if ((Input.GetKeyDown(KeyCode.Space)) ||(Input.GetMouseButtonDown(0)))
             {
-                playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jumpForce);
+                playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jumpForce + 1000000000);
             }
-        }
+        }  
 
 
         movement.SetBool("Grounded", grounded);

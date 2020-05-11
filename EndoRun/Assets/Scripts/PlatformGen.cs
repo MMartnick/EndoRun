@@ -30,8 +30,8 @@ public class PlatformGen : MonoBehaviour
         if(transform.position.x < genPoint.position.x)
         {
 
-         float platformWidthRand = Random.Range(0.1f, 2.5f);
-         float platformHeightRand = Random.Range(-5.0f, 0.0f);
+            float platformWidthRand = Random.Range(0.1f, 2.5f);
+            float platformHeightRand = Random.Range(-3000.0f, -1000.0f);
 
             transform.position = new Vector3(transform.position.x + (platformWidth + platformWidthRand) + distanceBetween, platformModel.transform.position.y + platformHeightRand, 0);
 
