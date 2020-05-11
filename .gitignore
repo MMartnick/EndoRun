@@ -3,9 +3,10 @@
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
+/[Aa]ssets/Art*
+/[Aa]ssets/Audio*
 Assets/AssetStoreTools*
-Assets/Art*
-Assets/Audio*
+
 
 # Visual Studio cache directory
 .vs/
