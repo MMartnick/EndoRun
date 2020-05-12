@@ -6,6 +6,11 @@ public class PlatformGen : MonoBehaviour
 {
 
     public GameObject platformModel;
+    public GameObject platformModelTwo;
+    public GameObject platformModelThree;
+
+    public GameObject randomPlatform;
+
     public GameObject newPlatform;
     public GameObject startPlatform;
     public Transform genPoint;
@@ -22,12 +27,15 @@ public class PlatformGen : MonoBehaviour
     {
         platformWidth = platformModel.GetComponent<BoxCollider2D>().size.x;
         platformHeight = platformModel.GetComponent<BoxCollider2D>().size.y;
+        RandomPlatformGen();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x < genPoint.position.x)
+        RandomPlatformGen();
+
+        if (transform.position.x < genPoint.position.x)
         {
 
             float platformWidthRand = Random.Range(0.1f, 2.5f);
@@ -35,12 +43,38 @@ public class PlatformGen : MonoBehaviour
 
             transform.position = new Vector3(transform.position.x + (platformWidth + platformWidthRand) + distanceBetween, platformModel.transform.position.y + platformHeightRand, 0);
 
+            //print("rand = "+ platformHeightRand);
 
-            print("rand = "+ platformHeightRand);
-
-            newPlatform = Instantiate(platformModel, transform.position, transform.rotation);
+            newPlatform = Instantiate(randomPlatform, transform.position, transform.rotation);
             Destroy(newPlatform, secondsToDestroy);
             Destroy(startPlatform, secondsToDestroy);
         }
     }
+
+    void RandomPlatformGen()
+    {
+        int randNum = Random.Range(0, 5);
+
+        if (randNum == 0)
+        {
+            randomPlatform = platformModel;
+        }
+
+        if (randNum == 1 || randNum == 2)
+        {
+            randomPlatform = platformModelTwo;
+        }
+
+        if (randNum == 3 || randNum == 4 || randNum == 5)
+        {
+            randomPlatform = platformModelThree;
+        }
+
+    }
+
+   public void DeathScreenNotifier()
+    {
+        secondsToDestroy = 3600;
+    }
+
 }

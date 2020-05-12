@@ -11,7 +11,8 @@ public class DeathMenu : MonoBehaviour
 
 
     public GameObject DeathScreen;
-    public bool deathScreenActive;
+    public  bool deathScreenActive;
+    public static bool deathScreenNotifier;
 
     public void StartGame()
     {
@@ -32,6 +33,7 @@ public class DeathMenu : MonoBehaviour
     public void Show()
     {
         deathScreenActive = true;
+        deathScreenNotifier = true;
     }
 
     public void Update()

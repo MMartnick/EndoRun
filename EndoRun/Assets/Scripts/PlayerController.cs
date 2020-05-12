@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public int touchRed = 1;
     public LayerMask deathBar;
     public GameObject deathScreen;
+    public GameObject generator;
+    public GameObject generatorBG;
 
     private Collider2D playerCollider;
 
@@ -59,6 +61,9 @@ public class PlayerController : MonoBehaviour
             moveSpeed = 0;
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             deathScreen.GetComponent<DeathMenu>().Show();
+            generator.GetComponent<PlatformGen>().DeathScreenNotifier();
+            generatorBG.GetComponent<PlatformGen>().DeathScreenNotifier();
+
             touchRed = 20;
         } 
     }
