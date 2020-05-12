@@ -22,6 +22,7 @@ public class PlatformGen : MonoBehaviour
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +36,7 @@ public class PlatformGen : MonoBehaviour
     {
         RandomPlatformGen();
 
-        if (transform.position.x < genPoint.position.x)
+        if (transform.position.x < genPoint.position.x )
         {
 
             float platformWidthRand = Random.Range(0.1f, 2.5f);
@@ -49,6 +50,7 @@ public class PlatformGen : MonoBehaviour
             Destroy(newPlatform, secondsToDestroy);
             Destroy(startPlatform, secondsToDestroy);
         }
+
     }
 
     void RandomPlatformGen()
@@ -70,11 +72,6 @@ public class PlatformGen : MonoBehaviour
             randomPlatform = platformModelThree;
         }
 
-    }
-
-   public void DeathScreenNotifier()
-    {
-        secondsToDestroy = 3600;
     }
 
 }

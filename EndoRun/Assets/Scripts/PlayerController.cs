@@ -61,9 +61,6 @@ public class PlayerController : MonoBehaviour
             moveSpeed = 0;
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             deathScreen.GetComponent<DeathMenu>().Show();
-            generator.GetComponent<PlatformGen>().DeathScreenNotifier();
-            generatorBG.GetComponent<PlatformGen>().DeathScreenNotifier();
-
             touchRed = 20;
         } 
     }

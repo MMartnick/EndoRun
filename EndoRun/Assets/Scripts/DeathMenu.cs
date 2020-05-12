@@ -11,7 +11,7 @@ public class DeathMenu : MonoBehaviour
 
 
     public GameObject DeathScreen;
-    public  bool deathScreenActive;
+    public bool deathScreenActive = false;
     public static bool deathScreenNotifier;
 
     public void StartGame()
@@ -28,17 +28,19 @@ public class DeathMenu : MonoBehaviour
     public void Hide()
     {
         Destroy(DeathScreen);
+        Time.timeScale = 1;
     }
 
     public void Show()
     {
         deathScreenActive = true;
         deathScreenNotifier = true;
+        Time.timeScale = 0;
     }
 
     public void Update()
     {
-        if(deathScreenActive)
+        if(deathScreenActive == true)
         {
             Instantiate(DeathScreen, transform.position, transform.rotation);
             deathScreenActive = false;
