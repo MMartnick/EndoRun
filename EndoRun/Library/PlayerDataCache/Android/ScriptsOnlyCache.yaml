@@ -2,10 +2,13 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - CameraController
+    - Collectable
     - DeathMenu
     - MainMenu
     - PlatformGen
     - PlayerController
+    - Rotator
+    - ScoringSystem
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -139,6 +142,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13646}
     - Class: 114
       Script: {instanceID: 13800}
+    - Class: 114
+      Script: {instanceID: 34236}
+    - Class: 114
+      Script: {instanceID: 34538}
+    - Class: 114
+      Script: {instanceID: 92860}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -474,7 +483,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: cf77d40330e3bb1d85a44d2ba2f882f4
+      Hash: c3f278e8b2b0d899ddada44dd564fe25
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -616,6 +625,24 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Collectable
+  - hash:
+      serializedVersion: 2
+      Hash: d58dc70f3a2342bfeec829317482d078
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScoringSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 1c963de3bf018bece5941494c8494bf9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Rotator
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
