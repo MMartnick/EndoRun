@@ -357,7 +357,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444661332054190135}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08042307, y: 2.5278966, z: 3}
+  m_LocalPosition: {x: 0.072, y: 2.5278966, z: -1}
   m_LocalScale: {x: 2.755205, y: 2.755205, z: 2.755205}
   m_Children: []
   m_Father: {fileID: 2026358431474485621}
@@ -5380,6 +5380,7 @@ GameObject:
   - component: {fileID: 7358430610007457801}
   - component: {fileID: 540502070498413658}
   - component: {fileID: 8535060161360622081}
+  - component: {fileID: 3040889769637424442}
   m_Layer: 8
   m_Name: BuildModel 4
   m_TagString: Untagged
@@ -5459,7 +5460,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5497,6 +5498,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.883417, y: 2.7086122}
   m_EdgeRadius: 0
+--- !u!114 &3040889769637424442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6863149879319853764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b76214243b886ad448e95e532077669c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6931703100431414597
 GameObject:
   m_ObjectHideFlags: 0
@@ -8307,7 +8320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9058934640658253193}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: -0.01, z: 5}
+  m_LocalPosition: {x: -0.02, y: -0.01, z: 0}
   m_LocalScale: {x: 0.97512203, y: 0.97512203, z: 0.97512203}
   m_Children: []
   m_Father: {fileID: 7358430610007457801}
@@ -8352,7 +8365,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -5
+  m_SortingOrder: -4
   m_Sprite: {fileID: 21300000, guid: c8a033dce70f896409000b50841cf59b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -6,11 +6,14 @@ using UnityEngine.UI;
 public class Collectable : MonoBehaviour
 {
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D mainObject)
     {
-
-        ScoringSystem.updateScore = 1;
-        Destroy(gameObject);
+        PlayerController player = mainObject.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            ScoringSystem.updateScore = 5;
+            Destroy(gameObject);
+        }
     }
 
 }
