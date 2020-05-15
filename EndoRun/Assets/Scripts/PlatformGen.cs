@@ -8,6 +8,7 @@ public class PlatformGen : MonoBehaviour
     public GameObject platformModel;
     public GameObject platformModelTwo;
     public GameObject platformModelThree;
+    public GameObject platformModelFour;
 
     public GameObject randomPlatform;
 
@@ -55,7 +56,7 @@ public class PlatformGen : MonoBehaviour
 
     void RandomPlatformGen()
     {
-        int randNum = Random.Range(0, 5);
+        int randNum = Random.Range(0, 6);
 
         if (randNum == 0)
         {
@@ -70,6 +71,11 @@ public class PlatformGen : MonoBehaviour
         if (randNum == 3 || randNum == 4 || randNum == 5)
         {
             randomPlatform = platformModelThree;
+        }
+
+        if (randNum == 6)
+        {
+            randomPlatform = platformModelFour;
         }
 
     }

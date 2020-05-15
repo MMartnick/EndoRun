@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     private Animator movement;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,26 +33,23 @@ public class PlayerController : MonoBehaviour
         playerCollider = GetComponent<Collider2D>();
 
         movement = GetComponent<Animator>();
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        playerRigidBody.velocity = new Vector2(moveSpeed, playerRigidBody.velocity.y);
+
         grounded = Physics2D.IsTouchingLayers(playerCollider, whatIsGround);
         playerDead = Physics2D.IsTouchingLayers(playerCollider, deathBar);
 
-        playerRigidBody.velocity = new Vector2(moveSpeed, playerRigidBody.velocity.y);
 
-
-        if (grounded)
+        if (grounded && Input.GetKeyDown(KeyCode.Space))                    //(Input.GetMouseButtonDown(0)))
         {
-            if ((Input.GetKeyDown(KeyCode.Space)) ||(Input.GetMouseButtonDown(0)))
-            {
-                playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jumpForce + 1000000000);
-            }
-        }  
+            playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jumpForce + 1000000000);
+        }
 
 
         movement.SetBool("Grounded", grounded);
@@ -63,6 +61,15 @@ public class PlayerController : MonoBehaviour
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             deathScreen.GetComponent<DeathMenu>().Show();
             touchRed = 20;
-        } 
+        }
+    }
+
+    public void Jump()
+    {
+        if (grounded)
+        {
+            playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jumpForce + 1000000000);
+        }
     }
 }
+

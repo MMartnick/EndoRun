@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
-    public float rotationDegreesPerSecond = 90;
+    public float rotationDegreesPerSecond = 1;
     private float totalRotation = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
-     
+        transform.Rotate(90, 0, -180, Space.World);
+
     }
 
     // Update is called once per frame
@@ -22,9 +22,9 @@ public class Rotator : MonoBehaviour
     }
 
     void Awake()
-    {
-        float currentAngle = transform.rotation.eulerAngles.y;
-        transform.rotation = Quaternion.AngleAxis(currentAngle + ((Time.deltaTime * 4 ) * rotationDegreesPerSecond), Vector3.up);
-        totalRotation = Time.deltaTime  * rotationDegreesPerSecond;
+    { 
+
+
+        transform.Rotate(0, 2, 0, Space.World);
     }
 }
