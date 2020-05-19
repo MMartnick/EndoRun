@@ -5,6 +5,10 @@ ScriptsOnlyBuild:
     - CameraController
     - Collectable
     - DeathMenu
+    - Enemy
+    - Explosion
+    - GroundScript
+    - Hearts
     - MainMenu
     - PlatformGen
     - PlayerController
@@ -13,12 +17,16 @@ ScriptsOnlyBuild:
     - Shoot
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -56,19 +64,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11662}
     - Class: 114
-      Script: {instanceID: 11852}
+      Script: {instanceID: 11854}
     - Class: 114
-      Script: {instanceID: 11892}
+      Script: {instanceID: 11894}
     - Class: 114
-      Script: {instanceID: 12360}
+      Script: {instanceID: 12364}
     - Class: 114
-      Script: {instanceID: 12366}
+      Script: {instanceID: 12370}
     - Class: 114
-      Script: {instanceID: 12836}
+      Script: {instanceID: 12840}
     - Class: 114
-      Script: {instanceID: 13402}
+      Script: {instanceID: 13410}
     - Class: 114
-      Script: {instanceID: 13810}
+      Script: {instanceID: 13822}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -135,35 +143,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11662}
     - Class: 114
-      Script: {instanceID: 11852}
+      Script: {instanceID: 11854}
     - Class: 114
-      Script: {instanceID: 11892}
+      Script: {instanceID: 11894}
     - Class: 114
-      Script: {instanceID: 12172}
+      Script: {instanceID: 12174}
     - Class: 114
-      Script: {instanceID: 12342}
+      Script: {instanceID: 12258}
     - Class: 114
-      Script: {instanceID: 12360}
+      Script: {instanceID: 12346}
     - Class: 114
-      Script: {instanceID: 12688}
+      Script: {instanceID: 12364}
     - Class: 114
-      Script: {instanceID: 12836}
+      Script: {instanceID: 12692}
     - Class: 114
-      Script: {instanceID: 13076}
+      Script: {instanceID: 12840}
     - Class: 114
-      Script: {instanceID: 13244}
+      Script: {instanceID: 13082}
     - Class: 114
-      Script: {instanceID: 13402}
+      Script: {instanceID: 13250}
     - Class: 114
-      Script: {instanceID: 13550}
+      Script: {instanceID: 13380}
     - Class: 114
-      Script: {instanceID: 13628}
+      Script: {instanceID: 13410}
     - Class: 114
-      Script: {instanceID: 13654}
+      Script: {instanceID: 13558}
     - Class: 114
-      Script: {instanceID: 13794}
+      Script: {instanceID: 13636}
     - Class: 114
-      Script: {instanceID: 13810}
+      Script: {instanceID: 13646}
+    - Class: 114
+      Script: {instanceID: 13664}
+    - Class: 114
+      Script: {instanceID: 13676}
+    - Class: 114
+      Script: {instanceID: 13806}
+    - Class: 114
+      Script: {instanceID: 13822}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -209,6 +225,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerDamage
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -331,7 +353,7 @@ ScriptsOnlyBuild:
     className: GameController
   - hash:
       serializedVersion: 2
-      Hash: 7f85b89262afb2a0f3858dedbe007120
+      Hash: 158669a8fa3dca8248feaced2daae174
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Bullet
@@ -347,6 +369,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GroundScript
   - hash:
       serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
@@ -451,6 +479,12 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Ground
+  - hash:
+      serializedVersion: 2
       Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -511,7 +545,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: c3f278e8b2b0d899ddada44dd564fe25
+      Hash: b6633d20a8e0d20d00ef5e75aea22a4d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -521,6 +555,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Explosion
   - hash:
       serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
@@ -565,10 +605,22 @@ ScriptsOnlyBuild:
     className: Collectable
   - hash:
       serializedVersion: 2
+      Hash: 4a37c27dac7dafc6ba5ab47fb25eb5e7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Enemy
+  - hash:
+      serializedVersion: 2
       Hash: 27ebaa633e4f4014a4763e0bff2ae3e8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraController
+  - hash:
+      serializedVersion: 2
+      Hash: b8e597aaea22325f84a4df08fa57db50
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Hearts
   - hash:
       serializedVersion: 2
       Hash: d3b88a68e59633f91953413bb8bdfe0e
@@ -675,4 +727,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/endo.unity
-  playerPath: C:/Users/Matth/OneDrive/Documents/Git/Unity/EndoRun/EndoRun/MMartnick_Capstone2.apk
+  playerPath: C:/Users/Matth/OneDrive/Documents/Git/Unity/EndoRun/EndoRun/MMartnick_Milestone5-Capstone2.apk

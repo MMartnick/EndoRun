@@ -100,8 +100,7 @@ MonoBehaviour:
   speed: 5000
   damage: 1
   bulletRigidBody: {fileID: 2080150319344035477}
-  impactEffect: {fileID: 4740205601671533572, guid: 449253e7c1aca904fb43df31fc2ec8f1,
-    type: 3}
+  secondsToDestroy: 4
 --- !u!50 &2080150319344035477
 Rigidbody2D:
   serializedVersion: 4
@@ -136,6 +135,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0050720214}
   serializedVersion: 2
-  m_Radius: 0.50000006
+  m_Radius: 0.5744928

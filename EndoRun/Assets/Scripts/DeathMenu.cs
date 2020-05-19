@@ -6,18 +6,21 @@ using UnityEngine.SceneManagement;
 public class DeathMenu : MonoBehaviour
 {
 
+    public GameObject Player;
+
     public string restartLevel;
     public string mainMenu;
-
 
     public GameObject DeathScreen;
     public bool deathScreenActive = false;
     public static bool deathScreenNotifier;
 
     public void StartGame()
-    {
-        SceneManager.LoadScene(restartLevel);
+    { 
         Hide();
+        SceneManager.LoadScene(restartLevel);
+        Player.GetComponent<PlayerController>().ResetVar();
+        Player.GetComponent<Hearts>().ResetVar();
     }
 
     public void MainMenu()

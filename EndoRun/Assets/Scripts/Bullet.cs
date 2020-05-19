@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public float speed = 5000;
     public int damage = 1;
     public Rigidbody2D bulletRigidBody;
-
+    public int secondsToDestroy;
 
 
     // Start is called before the first frame update
@@ -19,8 +19,8 @@ public class Bullet : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        // bulletRigidBody.velocity = transform.right * speed;
+    { 
+        Destroy(this.gameObject, secondsToDestroy);
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)

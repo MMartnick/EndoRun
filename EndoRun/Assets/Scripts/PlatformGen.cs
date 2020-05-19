@@ -15,21 +15,27 @@ public class PlatformGen : MonoBehaviour
     public GameObject newPlatform;
     public GameObject startPlatform;
     public Transform genPoint;
-    public float distanceBetween;
+
+    public bool delay;
+
     public int secondsToDestroy;
 
+    public float distanceBetween;
     private float platformWidth;
     private float platformHeight;
-
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(SpawnDelay());
+
         platformWidth = platformModel.GetComponent<BoxCollider2D>().size.x;
         platformHeight = platformModel.GetComponent<BoxCollider2D>().size.y;
         RandomPlatformGen();
+
+       // delay = true;
     }
 
     // Update is called once per frame
@@ -37,7 +43,7 @@ public class PlatformGen : MonoBehaviour
     {
         RandomPlatformGen();
 
-        if (transform.position.x < genPoint.position.x )
+        if ((transform.position.x < genPoint.position.x) && (delay == false))
         {
 
             float platformWidthRand = Random.Range(0.1f, 2.5f);
@@ -77,6 +83,15 @@ public class PlatformGen : MonoBehaviour
         {
             randomPlatform = platformModelFour;
         }
+
+    }
+
+    public IEnumerator SpawnDelay()
+    {
+
+        yield return new WaitForSeconds(5);
+
+        delay = false;
 
     }
 

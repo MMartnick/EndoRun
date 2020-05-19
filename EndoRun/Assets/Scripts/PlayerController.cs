@@ -6,33 +6,45 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
 
+    public GameObject deathScreen;
+    public GameObject generatorPlatform;
+    public GameObject generatorBG;
+
+    public int enemyLayer = LayerMask.NameToLayer("Enemy");
+    public int playerLayer = LayerMask.NameToLayer("Player");
+
     public float moveSpeed;
     public float jumpForce;
 
     private Rigidbody2D playerRigidBody;
 
-    public bool grounded;
-    public LayerMask whatIsGround;
-    public bool playerDead;
-    public int touchRed = 1;
+    private bool grounded;
+    private bool damaged;
+    private bool playerDead;
+
     public LayerMask deathBar;
-    public GameObject deathScreen;
-    public GameObject generator;
-    public GameObject generatorBG;
+    public LayerMask whatIsGround;
+
+    private int showDeath = 1;
+    private int health;
 
     private Collider2D playerCollider;
 
-    private Animator movement;
+    private Animator animControl;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
+
+        health = this.GetComponent<Hearts>().CurrentHealth;
+
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>();
 
-        movement = GetComponent<Animator>();
+        animControl = GetComponent<Animator>();
 
     }
 
@@ -52,15 +64,16 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        movement.SetBool("Grounded", grounded);
+        animControl.SetBool("Grounded", grounded);
+        animControl.SetBool("Damaged", damaged);
 
 
-        if ((playerDead) && (touchRed < 5))
+        if ((playerDead) && (showDeath < 5) || (health == 0) && (showDeath < 5))
         {
             moveSpeed = 0;
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             deathScreen.GetComponent<DeathMenu>().Show();
-            touchRed = 20;
+            showDeath = 20;
         }
     }
 
@@ -70,6 +83,50 @@ public class PlayerController : MonoBehaviour
         {
             playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jumpForce + 1000000000);
         }
+    }
+
+    void Hurt()
+    {
+        this.GetComponent<Hearts>().CurrentHealth--;
+        health--;
+    }
+
+    public IEnumerator HurtAnim()
+    {
+
+        Physics2D.IgnoreLayerCollision(enemyLayer, playerLayer);
+
+        animControl.SetLayerWeight(1, 1);
+
+        damaged = true;
+
+        yield return new WaitForSeconds(3);
+
+        animControl.SetLayerWeight(1, 0);
+        damaged = false;
+
+        Physics2D.IgnoreLayerCollision(enemyLayer, playerLayer, false);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Enemy enemy = collision.collider.GetComponent<Enemy>();
+
+        if (enemy != null)
+        {
+            StartCoroutine(HurtAnim());
+            Hurt();
+        }
+    }
+
+    public void ResetVar()
+    {
+       // grounded = false;
+        damaged = false;
+        playerDead = false;
+        showDeath = 1;
+        health = 5;
+        Physics2D.IgnoreLayerCollision(enemyLayer, playerLayer, false);
     }
 }
 

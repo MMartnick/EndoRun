@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2100473208433048285}
   - component: {fileID: 2100473208433048284}
   - component: {fileID: 2195114553663296930}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.02846025, y: -0.05174586}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.55, y: 0.52}
+  m_Size: {x: 0.27057245, y: 0.25609618}
   m_EdgeRadius: 0
 --- !u!50 &2100473208433048284
 Rigidbody2D:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33adf40eae03f694e8a2ba70fe917a01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 1
   enemyRb: {fileID: 2100473208433048284}
   impactEffect: {fileID: 4740205601671533572, guid: 449253e7c1aca904fb43df31fc2ec8f1,
     type: 3}

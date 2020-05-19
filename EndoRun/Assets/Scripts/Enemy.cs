@@ -5,23 +5,22 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    public int health = 3;
+    public int health = 1;
     public Rigidbody2D enemyRb;
     public GameObject impactEffect;
     private bool enemyLoop;
-  
 
     // Start is called before the first frame update
     void Start()
     {
-
         enemyLoop = true;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = new Vector3(transform.position.x - 10, transform.position.y, transform.position.z);
+        this.transform.position = new Vector3(transform.position.x - 7, transform.position.y, transform.position.z);
 
         if (enemyLoop) {
             StartCoroutine(Behaviour());
@@ -60,4 +59,7 @@ public class Enemy : MonoBehaviour
 
         enemyLoop = true;
     }
+
+
+
 }
