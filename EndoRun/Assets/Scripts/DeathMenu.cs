@@ -7,6 +7,9 @@ public class DeathMenu : MonoBehaviour
 {
 
     public GameObject Player;
+    public GameObject SpawnPoint;
+
+    private int score;
 
     public string restartLevel;
     public string mainMenu;
@@ -15,12 +18,45 @@ public class DeathMenu : MonoBehaviour
     public bool deathScreenActive = false;
     public static bool deathScreenNotifier;
 
+
+    void Start()
+    {
+        Player = GameObject.Find("Player");
+        SpawnPoint = GameObject.Find("RespawnPoint");
+    }
+
+
+    void Update()
+    {
+        score = ScoringSystem.score;
+
+        if (deathScreenActive == true)
+        {
+            Instantiate(DeathScreen, transform.position, transform.rotation);
+            deathScreenActive = false;
+        }
+    }
+
+
+
     public void StartGame()
     { 
         Hide();
         SceneManager.LoadScene(restartLevel);
         Player.GetComponent<PlayerController>().ResetVar();
         Player.GetComponent<Hearts>().ResetVar();
+        ScoringSystem.previousScore = 0;
+    }
+
+    public void ContinueGame()
+    {
+        
+   
+        SceneManager.LoadScene(restartLevel);
+        Player.GetComponent<PlayerController>().ResetVar();
+        Player.GetComponent<Hearts>().ResetVar();
+        ScoringSystem.previousScore = score;
+        Hide();
     }
 
     public void MainMenu()
@@ -41,12 +77,17 @@ public class DeathMenu : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    public void Update()
+
+
+    IEnumerator ReSpawn()
     {
-        if(deathScreenActive == true)
-        {
-            Instantiate(DeathScreen, transform.position, transform.rotation);
-            deathScreenActive = false;
-        }
+        deathScreenActive = false;
+        
+        Hide();
+
+        
+
+        yield return new WaitForSeconds(1);
+    
     }
 }

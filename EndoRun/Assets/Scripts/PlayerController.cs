@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
     public GameObject generatorPlatform;
     public GameObject generatorBG;
 
-    public int enemyLayer = LayerMask.NameToLayer("Enemy");
-    public int playerLayer = LayerMask.NameToLayer("Player");
+    public int enemyLayer;
+    public int playerLayer;
 
     public float moveSpeed;
     public float jumpForce;
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
         playerRigidBody.velocity = new Vector2(moveSpeed, playerRigidBody.velocity.y);
 
         grounded = Physics2D.IsTouchingLayers(playerCollider, whatIsGround);
-        playerDead = Physics2D.IsTouchingLayers(playerCollider, deathBar);
+        playerDead = Physics2D.IsTouchingLayers(playerCollider, deathBar) || (health == 0);
 
 
         if (grounded && Input.GetKeyDown(KeyCode.Space))                    //(Input.GetMouseButtonDown(0)))
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
         animControl.SetBool("Damaged", damaged);
 
 
-        if ((playerDead) && (showDeath < 5) || (health == 0) && (showDeath < 5))
+        if ((playerDead) && (showDeath < 5))
         {
             moveSpeed = 0;
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -93,8 +93,9 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator HurtAnim()
     {
-
-        Physics2D.IgnoreLayerCollision(enemyLayer, playerLayer);
+              enemyLayer = LayerMask.NameToLayer("Enemy");
+     playerLayer = LayerMask.NameToLayer("Player");
+    Physics2D.IgnoreLayerCollision(enemyLayer, playerLayer);
 
         animControl.SetLayerWeight(1, 1);
 
@@ -128,5 +129,6 @@ public class PlayerController : MonoBehaviour
         health = 5;
         Physics2D.IgnoreLayerCollision(enemyLayer, playerLayer, false);
     }
+
 }
 

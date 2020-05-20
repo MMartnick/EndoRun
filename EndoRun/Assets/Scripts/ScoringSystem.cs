@@ -9,10 +9,11 @@ public class ScoringSystem : MonoBehaviour
     public GameObject scoreText;
     public static int score;
     public static int updateScore;
+    public static int previousScore;
 
     private void Start()
     {
-        score = 0;
+        score = previousScore;
     }
 
     void Update()

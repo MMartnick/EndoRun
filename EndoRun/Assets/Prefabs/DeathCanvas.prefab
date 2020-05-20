@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9137661450632844821}
   - component: {fileID: 9137661450632844820}
   - component: {fileID: 6089205072596876053}
+  - component: {fileID: -7279513794975480758}
   m_Layer: 5
   m_Name: DeathCanvas
   m_TagString: Untagged
@@ -112,10 +113,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6048ce1adc273294586beee0eb192f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  SpawnPoint: {fileID: 0}
   restartLevel: endo
   mainMenu: MainMenu
   DeathScreen: {fileID: 6797343786013764313}
   deathScreenActive: 0
+--- !u!114 &-7279513794975480758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9137661450632844819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb0b54318f737e48a68bcf6afc12a08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  SpawnPoint: {fileID: 0}
 --- !u!1001 &784102594294270727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -123,6 +140,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9137661450632844823}
     m_Modifications:
+    - target: {fileID: 104555762402799188, guid: 86ac821cdb7ffbc438ed21ff594a610f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -240
+      objectReference: {fileID: 0}
     - target: {fileID: 170880502495836528, guid: 86ac821cdb7ffbc438ed21ff594a610f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -183,7 +205,7 @@ PrefabInstance:
     - target: {fileID: 3288911415844357564, guid: 86ac821cdb7ffbc438ed21ff594a610f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -195.8
+      value: -175
       objectReference: {fileID: 0}
     - target: {fileID: 3968967580494539862, guid: 86ac821cdb7ffbc438ed21ff594a610f,
         type: 3}
@@ -315,6 +337,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DeathScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055063683728729407, guid: 86ac821cdb7ffbc438ed21ff594a610f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6089205072596876053}
+    - target: {fileID: 7055063683728729407, guid: 86ac821cdb7ffbc438ed21ff594a610f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ContinueGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055063683728729407, guid: 86ac821cdb7ffbc438ed21ff594a610f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DeathMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7382177897426830381, guid: 86ac821cdb7ffbc438ed21ff594a610f,
         type: 3}
