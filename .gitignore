@@ -11,7 +11,7 @@
 /[Mm]emoryCaptures/
 /[Aa]ssets/Art*
 /[Aa]ssets/Audio*
-
+/[Aa]ssets/Scripts/Ads.cs
 # Assets need to be removed.
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored

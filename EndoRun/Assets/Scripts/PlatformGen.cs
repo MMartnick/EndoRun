@@ -62,24 +62,24 @@ public class PlatformGen : MonoBehaviour
 
     void RandomPlatformGen()
     {
-        int randNum = Random.Range(0, 6);
+        int randNum = Random.Range(0, 11);
 
-        if (randNum == 0)
+        if (randNum == 0 || randNum == 8)
         {
             randomPlatform = platformModel;
         }
 
-        if (randNum == 1 || randNum == 2)
+        if (randNum == 1 || randNum == 2 || randNum == 9 || randNum == 10)
         {
             randomPlatform = platformModelTwo;
         }
 
-        if (randNum == 3 || randNum == 4 || randNum == 5)
+        if (randNum == 3 || randNum == 4 || randNum == 5 || randNum == 7 )
         {
             randomPlatform = platformModelThree;
         }
 
-        if (randNum == 6)
+        if (randNum == 6 || randNum == 11)
         {
             randomPlatform = platformModelFour;
         }

@@ -1,9 +1,11 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Ads
     - Bullet
     - CameraController
     - Collectable
+    - Continue
     - DeathMenu
     - Enemy
     - Explosion
@@ -15,8 +17,11 @@ ScriptsOnlyBuild:
     - Rotator
     - ScoringSystem
     - Shoot
+    - UnityAdsManager
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
@@ -40,6 +45,57 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
+    Assets/Scenes/Credits.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11698}
+    - Class: 114
+      Script: {instanceID: 11912}
+    - Class: 114
+      Script: {instanceID: 11956}
+    - Class: 114
+      Script: {instanceID: 12464}
+    - Class: 114
+      Script: {instanceID: 12470}
+    - Class: 114
+      Script: {instanceID: 13002}
+    - Class: 114
+      Script: {instanceID: 13614}
+    - Class: 114
+      Script: {instanceID: 14070}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/MainMenu.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -62,21 +118,21 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11662}
+      Script: {instanceID: 11698}
     - Class: 114
-      Script: {instanceID: 11854}
+      Script: {instanceID: 11912}
     - Class: 114
-      Script: {instanceID: 11894}
+      Script: {instanceID: 11956}
     - Class: 114
-      Script: {instanceID: 12364}
+      Script: {instanceID: 12464}
     - Class: 114
-      Script: {instanceID: 12370}
+      Script: {instanceID: 12470}
     - Class: 114
-      Script: {instanceID: 12840}
+      Script: {instanceID: 13002}
     - Class: 114
-      Script: {instanceID: 13410}
+      Script: {instanceID: 13614}
     - Class: 114
-      Script: {instanceID: 13822}
+      Script: {instanceID: 14070}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -141,45 +197,51 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11662}
+      Script: {instanceID: 11698}
     - Class: 114
-      Script: {instanceID: 11854}
+      Script: {instanceID: 11812}
     - Class: 114
-      Script: {instanceID: 11894}
+      Script: {instanceID: 11818}
     - Class: 114
-      Script: {instanceID: 12174}
+      Script: {instanceID: 11912}
     - Class: 114
-      Script: {instanceID: 12258}
+      Script: {instanceID: 11956}
     - Class: 114
-      Script: {instanceID: 12346}
+      Script: {instanceID: 12186}
     - Class: 114
-      Script: {instanceID: 12364}
+      Script: {instanceID: 12262}
     - Class: 114
-      Script: {instanceID: 12692}
+      Script: {instanceID: 12354}
     - Class: 114
-      Script: {instanceID: 12840}
+      Script: {instanceID: 12442}
     - Class: 114
-      Script: {instanceID: 13082}
+      Script: {instanceID: 12464}
     - Class: 114
-      Script: {instanceID: 13250}
+      Script: {instanceID: 12828}
     - Class: 114
-      Script: {instanceID: 13380}
+      Script: {instanceID: 13002}
     - Class: 114
-      Script: {instanceID: 13410}
+      Script: {instanceID: 13258}
     - Class: 114
-      Script: {instanceID: 13558}
+      Script: {instanceID: 13440}
     - Class: 114
-      Script: {instanceID: 13636}
+      Script: {instanceID: 13580}
     - Class: 114
-      Script: {instanceID: 13646}
+      Script: {instanceID: 13614}
     - Class: 114
-      Script: {instanceID: 13664}
+      Script: {instanceID: 13784}
     - Class: 114
-      Script: {instanceID: 13676}
+      Script: {instanceID: 13870}
     - Class: 114
-      Script: {instanceID: 13806}
+      Script: {instanceID: 13880}
     - Class: 114
-      Script: {instanceID: 13822}
+      Script: {instanceID: 13898}
+    - Class: 114
+      Script: {instanceID: 13912}
+    - Class: 114
+      Script: {instanceID: 14052}
+    - Class: 114
+      Script: {instanceID: 14070}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -227,10 +289,22 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 88e2c6f501bf5dead831a3e44c30de40
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements.Platform.Editor
+    className: BannerPlaceholder
+  - hash:
+      serializedVersion: 2
+      Hash: 4779fd42ed42cb194adb84628ba5ee4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: PlayerDamage
+    className: Ads
+  - hash:
+      serializedVersion: 2
+      Hash: 6cb172316224fb257c2d8bea1f56c948
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UnityAdsManager
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -261,6 +335,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Scrollbar
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements
+    className: Placeholder
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -329,6 +409,12 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
+      Hash: b704c151a45cdcc852a8c244ddbb9f28
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Continue
+  - hash:
+      serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -383,7 +469,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 8ba9eb1484c98b6bd111482e2ad3a95a
+      Hash: 2a13e5d82d29a841995b87b918d76fd8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlatformGen
@@ -401,7 +487,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 17c2b085594a77e631d73ef873af6839
+      Hash: d68277cbec6417c710abff1b8a216979
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenu
@@ -461,6 +547,12 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Monetization.dll
+    namespaceName: UnityEngine.Monetization
+    className: Placeholder
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -491,6 +583,12 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Butt
+  - hash:
+      serializedVersion: 2
       Hash: f7bb6096199e0cf058d5d69878184cf4
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -503,7 +601,7 @@ ScriptsOnlyBuild:
     className: SignalReceiver
   - hash:
       serializedVersion: 2
-      Hash: a38f6b444ac8aa58f5c51a53b94693af
+      Hash: d5ddebe6955137f0edd722af1d91c73d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DeathMenu
@@ -545,7 +643,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: b6633d20a8e0d20d00ef5e75aea22a4d
+      Hash: e045f83c2175fd8f68aec20158c1c7da
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -567,6 +665,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AudioTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements.Utilities
+    className: ApplicationQuit
   - hash:
       serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
@@ -677,7 +781,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: d58dc70f3a2342bfeec829317482d078
+      Hash: dbc4f2335d68eaf2ceb1903178208bcd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ScoringSystem
@@ -713,6 +817,12 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
+      Hash: a325152ad9563ed900af221c132fea36
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements.Utilities
+    className: CoroutineExecutor
+  - hash:
+      serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -726,5 +836,6 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
+  - Assets/Scenes/Credits.unity
   - Assets/Scenes/endo.unity
-  playerPath: C:/Users/Matth/OneDrive/Documents/Git/Unity/EndoRun/EndoRun/MMartnick_Milestone5-Capstone2.apk
+  playerPath: C:/Users/Matth/OneDrive/Desktop/Outrunnerscreens/OutRunnerVer0-1-2.aab

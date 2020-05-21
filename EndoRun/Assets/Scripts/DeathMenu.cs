@@ -17,7 +17,7 @@ public class DeathMenu : MonoBehaviour
     public GameObject DeathScreen;
     public bool deathScreenActive = false;
     public static bool deathScreenNotifier;
-
+    public static bool continueTrue;
 
     void Start()
     {
@@ -40,18 +40,20 @@ public class DeathMenu : MonoBehaviour
 
 
     public void StartGame()
-    { 
-        Hide();
+    {
+        continueTrue = false;
         SceneManager.LoadScene(restartLevel);
         Player.GetComponent<PlayerController>().ResetVar();
         Player.GetComponent<Hearts>().ResetVar();
         ScoringSystem.previousScore = 0;
+        Hide();
+
     }
 
     public void ContinueGame()
     {
-        
-   
+
+        continueTrue = true;
         SceneManager.LoadScene(restartLevel);
         Player.GetComponent<PlayerController>().ResetVar();
         Player.GetComponent<Hearts>().ResetVar();
@@ -67,7 +69,7 @@ public class DeathMenu : MonoBehaviour
     public void Hide()
     {
         Destroy(DeathScreen);
-        Time.timeScale = 1;
+    
     }
 
     public void Show()
@@ -75,19 +77,5 @@ public class DeathMenu : MonoBehaviour
         deathScreenActive = true;
         deathScreenNotifier = true;
         Time.timeScale = 0;
-    }
-
-
-
-    IEnumerator ReSpawn()
-    {
-        deathScreenActive = false;
-        
-        Hide();
-
-        
-
-        yield return new WaitForSeconds(1);
-    
     }
 }
