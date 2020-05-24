@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D enemyRb;
     public GameObject impactEffect;
     private bool enemyLoop;
+    private Vector3 currentPos;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +22,25 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = new Vector3(transform.position.x - 7, transform.position.y, transform.position.z);
+        if (Time.timeScale == 1)
+        {
+            this.transform.position = new Vector3(transform.position.x - 7, transform.position.y, transform.position.z);
+          //  currentPos = this.transform.position;
 
-        if (enemyLoop) {
+        }
+        else if (Time.timeScale == 0)
+        {
+           // this.transform.position = currentPos;
+        }
+
+        if (enemyLoop)
+        {
             StartCoroutine(Behaviour());
         }
     }
+
+
+
 
     public void TakeDamage(int Damage)
     {
