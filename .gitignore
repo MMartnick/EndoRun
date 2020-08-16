@@ -11,7 +11,7 @@ EndoRun//[Ll]ogs/
 EndoRun//[Mm]emoryCaptures/
 EndoRun//[Aa]ssets/Art*
 EndoRun//[Aa]ssets/Audio*
-EndoRun/[Aa]ssets/Scripts/Ads.cs
+EndoRun//[Aa]ssets/Scripts/Ads.cs
 # Assets need to be removed.
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
