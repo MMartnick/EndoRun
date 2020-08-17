@@ -3,8 +3,8 @@ Out Runner is a Unity based endless runner game, built in C#. The project is in 
 
 #### Link: https://play.google.com/store/apps/details?id=com.DefaultCompany.OutRunner&hl=en_US
 
-![Out Runner 1](/EndoRun/SampleImgs/out.jpg)
+![Out Runner 1](/OutRunner/SampleImgs/out.jpg)
 
 
-![Out Runner 2](/EndoRun/SampleImgs/gameplay.jpg)
+![Out Runner 2](/OutRunner/SampleImgs/gameplay.jpg)
 
