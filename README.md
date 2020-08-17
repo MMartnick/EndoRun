@@ -6,5 +6,5 @@ Out Runner is a Unity based endless runner game, built in C#. The project is in 
 ![Out Runner 1](/EndoRun/SampleImgs/out.jpg)
 
 
-![Out Runner 2](/EndoRun/SampleImgs/gameplay.jpg)
+![Out Runner 2](/EndoRun/SampleImgs/unnamed.jpg)
 
