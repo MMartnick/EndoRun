@@ -10,6 +10,7 @@ OutRunner//[Bb]uilds/
 OutRunner//[Ll]ogs/
 OutRunner//[Mm]emoryCaptures/
 OutRunner//[Aa]ssets/Art*
+OutRunner//[Aa]ssets/Art/
 OutRunner//[Aa]ssets/Audio*
 OutRunner//[Aa]ssets/Scripts/Ads.cs
 # Assets need to be removed.
