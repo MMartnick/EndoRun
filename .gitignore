@@ -15,7 +15,7 @@ EndoRun//[Aa]ssets/Scripts/Ads.cs
 # Assets need to be removed.
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
-EndoRun//[Aa]ssets/**/*.meta
+!EndoRun//[Aa]ssets/**/*.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 EndoRun//[Aa]ssets/AssetStoreTools*
